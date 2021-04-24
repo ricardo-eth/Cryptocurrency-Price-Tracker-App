@@ -4,7 +4,7 @@ import "./App.css";
 import Coin from "./Coin";
 
 const gitHubUrl =
-  "https://raw.githubusercontent.com/ricardo-eth/sarahro/main/public/api.sro.json";
+  "https://raw.githubusercontent.com/ricardo-eth/Cryptocurrency-Price-Tracker-App/main/public/api.sro.json";
 
 function App() {
   const [coins, setCoins] = useState([]);
