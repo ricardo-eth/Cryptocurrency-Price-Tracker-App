@@ -4,7 +4,7 @@ import "./App.css";
 import Coin from "./Coin";
 
 const gitHubUrl =
-  "https://raw.githubusercontent.com/ricardo-eth/Cryptocurrency-Price-Tracker-App/main/public/api.sro.json";
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -12,12 +12,24 @@ function App() {
 
   useEffect(() => {
     getGitHubUserWithFetch();
-    getGiHubUserWithAxios();
+    //getGiHubUserWithAxios();
   }, []);
 
   const getGitHubUserWithFetch = async () => {
     const response = await fetch(gitHubUrl);
     const jsonData = await response.json();
+    await jsonData.splice(2, 0, {
+      id: "sarahro",
+      symbol: "sro",
+      name: "SarahRO",
+      image: "https://sarahro-sro.netlify.app/sarahro_large.png",
+      current_price: 0.005,
+      market_cap: 42473064,
+      total_volume: 40547352064,
+      price_change_24h: 1000,
+      price_change_percentage_24h: 1000,
+    });
+    console.log(jsonData);
     setCoins(jsonData);
   };
 
