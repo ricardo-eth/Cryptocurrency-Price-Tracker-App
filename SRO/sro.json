@@ -1,0 +1,10 @@
+[
+    {
+        "id": "sarahro",
+        "symbol": "SRO",
+        "name": "SarahRO",
+        "image": "./sarahro_large",
+        "current_price": 0,
+        "price_change_percentage_24h": 0
+    }
+]

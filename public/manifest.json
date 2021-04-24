@@ -1,0 +1,20 @@
+{
+  "short_name": "Cryptocurrency Price Tracker App",
+  "name": "Cryptocurrency Price Tracker App",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
