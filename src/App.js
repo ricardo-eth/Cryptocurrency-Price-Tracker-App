@@ -15,22 +15,32 @@ function App() {
     //getGiHubApiWithAxios();
   }, []);
 
+  //// get GitHub Api With Fetch
   const getGitHubApiWithFetch = async () => {
     const response = await fetch(gitHubUrl);
     const jsonData = await response.json();
+
+    // Get data
+    const volumeSro = jsonData[1].total_volume;
+    const marketCapSro = jsonData[1].market_cap;
+    const pricePercentageSro = jsonData[1].price_change_percentage_24h;
+
+    // Add SRO token
     await jsonData.splice(2, 0, {
       id: "sarahro",
       symbol: "sro",
       name: "SarahRO",
       image: "https://sarahro-sro.netlify.app/sarahro_large.png",
       current_price: 0.005,
-      market_cap: 42473064,
-      total_volume: 40547352064,
+      market_cap: marketCapSro - 34452473064,
+      total_volume: volumeSro - 20452473064,
       price_change_24h: 1000,
-      price_change_percentage_24h: 1000,
+      price_change_percentage_24h: pricePercentageSro + 1000,
     });
     setCoins(jsonData);
   };
+
+  //// get GiHub Api With Axios
 
   // const getGiHubApiWithAxios = async () => {
   //   const response = await axios.get(gitHubUrl);
@@ -62,6 +72,7 @@ function App() {
         return (
           <Coin
             key={coin.id}
+            rank={coin.market_cap_rank}
             name={coin.name}
             price={coin.current_price}
             symbol={coin.symbol}
