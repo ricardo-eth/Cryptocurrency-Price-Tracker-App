@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     getGitHubUserWithFetch();
-    //getGiHubUserWithAxios();
+    getGiHubUserWithAxios();
   }, []);
 
   const getGitHubUserWithFetch = async () => {
