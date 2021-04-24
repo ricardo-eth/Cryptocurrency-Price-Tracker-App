@@ -47,15 +47,6 @@ function App() {
           />
         </form>
       </div>
-      <Coin
-        name="SarahRO"
-        price={0.005}
-        symbol="SRO"
-        marketcap={0}
-        volume={0}
-        image="/images/sarahro_large.png"
-        priceChange={1000}
-      />
       {filteredCoins.map((coin) => {
         return (
           <Coin
