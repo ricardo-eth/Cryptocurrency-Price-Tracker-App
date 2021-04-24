@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
 import "./App.css";
 import Coin from "./Coin";
 
@@ -11,11 +11,11 @@ function App() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    getGitHubUserWithFetch();
-    getGiHubUserWithAxios();
+    getGitHubApiWithFetch();
+    //getGiHubApiWithAxios();
   }, []);
 
-  const getGitHubUserWithFetch = async () => {
+  const getGitHubApiWithFetch = async () => {
     const response = await fetch(gitHubUrl);
     const jsonData = await response.json();
     await jsonData.splice(2, 0, {
@@ -29,14 +29,13 @@ function App() {
       price_change_24h: 1000,
       price_change_percentage_24h: 1000,
     });
-    console.log(jsonData);
     setCoins(jsonData);
   };
 
-  const getGiHubUserWithAxios = async () => {
-    const response = await axios.get(gitHubUrl);
-    setCoins(response.data);
-  };
+  // const getGiHubApiWithAxios = async () => {
+  //   const response = await axios.get(gitHubUrl);
+  //   setCoins(response.data);
+  // };
 
   const handleChange = (e) => {
     setSearch(e.target.value);
